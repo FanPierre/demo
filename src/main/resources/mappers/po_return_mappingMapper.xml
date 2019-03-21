@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.po_return_mappingMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.po_return_mapping">
+    <result column="PO_ID" jdbcType="VARCHAR" property="poId" />
+    <result column="SALES_FIELD_NAME" jdbcType="VARCHAR" property="salesFieldName" />
+    <result column="LOGINNAME" jdbcType="VARCHAR" property="loginname" />
+    <result column="BRANCH_CODE" jdbcType="VARCHAR" property="branchCode" />
+    <result column="BRANCH_NAME" jdbcType="VARCHAR" property="branchName" />
+    <result column="STORE_NO" jdbcType="VARCHAR" property="storeNo" />
+    <result column="STORE_NAME" jdbcType="VARCHAR" property="storeName" />
+    <result column="SUPPLIER_CODE" jdbcType="VARCHAR" property="supplierCode" />
+    <result column="SUPPLIER_NAME" jdbcType="VARCHAR" property="supplierName" />
+    <result column="PO_NO" jdbcType="VARCHAR" property="poNo" />
+    <result column="PO_START_DATE" jdbcType="TIMESTAMP" property="poStartDate" />
+    <result column="PO_END_DATE" jdbcType="TIMESTAMP" property="poEndDate" />
+    <result column="SHIP_TO" jdbcType="VARCHAR" property="shipTo" />
+    <result column="VERSION" jdbcType="VARCHAR" property="version" />
+    <result column="COMPANY_CODE" jdbcType="VARCHAR" property="companyCode" />
+    <result column="VOUCHER_CURRENCY" jdbcType="VARCHAR" property="voucherCurrency" />
+    <result column="SOLD_TO" jdbcType="VARCHAR" property="soldTo" />
+    <result column="LOAD_TYPE" jdbcType="VARCHAR" property="loadType" />
+    <result column="TOTAL_AMOUNT" jdbcType="DECIMAL" property="totalAmount" />
+    <result column="SALE_VOUCHER_TYPE" jdbcType="VARCHAR" property="saleVoucherType" />
+    <result column="PRODUCT_GROUP" jdbcType="VARCHAR" property="productGroup" />
+    <result column="SALES_ORG" jdbcType="VARCHAR" property="salesOrg" />
+    <result column="TRANSPORT_TYPE" jdbcType="VARCHAR" property="transportType" />
+    <result column="FACTORY_CODE" jdbcType="VARCHAR" property="factoryCode" />
+    <result column="SAP_TIME" jdbcType="TIMESTAMP" property="sapTime" />
+    <result column="SAP_STATUS" jdbcType="VARCHAR" property="sapStatus" />
+    <result column="CLOSE_REASON" jdbcType="VARCHAR" property="closeReason" />
+    <result column="ORDER_STORE" jdbcType="VARCHAR" property="orderStore" />
+    <result column="PO_DETAIL_ID" jdbcType="VARCHAR" property="poDetailId" />
+    <result column="LINE" jdbcType="VARCHAR" property="line" />
+    <result column="MATERIAL_CODE" jdbcType="VARCHAR" property="materialCode" />
+    <result column="MATERIEL_DESC" jdbcType="VARCHAR" property="materielDesc" />
+    <result column="SALE_TOTAL" jdbcType="DECIMAL" property="saleTotal" />
+    <result column="SALE_UNIT" jdbcType="VARCHAR" property="saleUnit" />
+    <result column="PRICE" jdbcType="DECIMAL" property="price" />
+    <result column="ITEM_CODE" jdbcType="VARCHAR" property="itemCode" />
+    <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="amount" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="SALE_UNIT_NAME" jdbcType="VARCHAR" property="saleUnitName" />
+    <result column="batch_number" jdbcType="VARCHAR" property="batchNumber" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.po_return_mapping">
+    insert into po_return_mapping (PO_ID, SALES_FIELD_NAME, LOGINNAME, 
+      BRANCH_CODE, BRANCH_NAME, STORE_NO, 
+      STORE_NAME, SUPPLIER_CODE, SUPPLIER_NAME, 
+      PO_NO, PO_START_DATE, PO_END_DATE, 
+      SHIP_TO, VERSION, COMPANY_CODE, 
+      VOUCHER_CURRENCY, SOLD_TO, LOAD_TYPE, 
+      TOTAL_AMOUNT, SALE_VOUCHER_TYPE, PRODUCT_GROUP, 
+      SALES_ORG, TRANSPORT_TYPE, FACTORY_CODE, 
+      SAP_TIME, SAP_STATUS, CLOSE_REASON, 
+      ORDER_STORE, PO_DETAIL_ID, LINE, 
+      MATERIAL_CODE, MATERIEL_DESC, SALE_TOTAL, 
+      SALE_UNIT, PRICE, ITEM_CODE, 
+      ITEM_NAME, AMOUNT, REMARK, 
+      SALE_UNIT_NAME, batch_number)
+    values (#{poId,jdbcType=VARCHAR}, #{salesFieldName,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
+      #{branchCode,jdbcType=VARCHAR}, #{branchName,jdbcType=VARCHAR}, #{storeNo,jdbcType=VARCHAR}, 
+      #{storeName,jdbcType=VARCHAR}, #{supplierCode,jdbcType=VARCHAR}, #{supplierName,jdbcType=VARCHAR}, 
+      #{poNo,jdbcType=VARCHAR}, #{poStartDate,jdbcType=TIMESTAMP}, #{poEndDate,jdbcType=TIMESTAMP}, 
+      #{shipTo,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{companyCode,jdbcType=VARCHAR}, 
+      #{voucherCurrency,jdbcType=VARCHAR}, #{soldTo,jdbcType=VARCHAR}, #{loadType,jdbcType=VARCHAR}, 
+      #{totalAmount,jdbcType=DECIMAL}, #{saleVoucherType,jdbcType=VARCHAR}, #{productGroup,jdbcType=VARCHAR}, 
+      #{salesOrg,jdbcType=VARCHAR}, #{transportType,jdbcType=VARCHAR}, #{factoryCode,jdbcType=VARCHAR}, 
+      #{sapTime,jdbcType=TIMESTAMP}, #{sapStatus,jdbcType=VARCHAR}, #{closeReason,jdbcType=VARCHAR}, 
+      #{orderStore,jdbcType=VARCHAR}, #{poDetailId,jdbcType=VARCHAR}, #{line,jdbcType=VARCHAR}, 
+      #{materialCode,jdbcType=VARCHAR}, #{materielDesc,jdbcType=VARCHAR}, #{saleTotal,jdbcType=DECIMAL}, 
+      #{saleUnit,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{itemCode,jdbcType=VARCHAR}, 
+      #{itemName,jdbcType=VARCHAR}, #{amount,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, 
+      #{saleUnitName,jdbcType=VARCHAR}, #{batchNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.entity.po_return_mapping">
+    insert into po_return_mapping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="poId != null">
+        PO_ID,
+      </if>
+      <if test="salesFieldName != null">
+        SALES_FIELD_NAME,
+      </if>
+      <if test="loginname != null">
+        LOGINNAME,
+      </if>
+      <if test="branchCode != null">
+        BRANCH_CODE,
+      </if>
+      <if test="branchName != null">
+        BRANCH_NAME,
+      </if>
+      <if test="storeNo != null">
+        STORE_NO,
+      </if>
+      <if test="storeName != null">
+        STORE_NAME,
+      </if>
+      <if test="supplierCode != null">
+        SUPPLIER_CODE,
+      </if>
+      <if test="supplierName != null">
+        SUPPLIER_NAME,
+      </if>
+      <if test="poNo != null">
+        PO_NO,
+      </if>
+      <if test="poStartDate != null">
+        PO_START_DATE,
+      </if>
+      <if test="poEndDate != null">
+        PO_END_DATE,
+      </if>
+      <if test="shipTo != null">
+        SHIP_TO,
+      </if>
+      <if test="version != null">
+        VERSION,
+      </if>
+      <if test="companyCode != null">
+        COMPANY_CODE,
+      </if>
+      <if test="voucherCurrency != null">
+        VOUCHER_CURRENCY,
+      </if>
+      <if test="soldTo != null">
+        SOLD_TO,
+      </if>
+      <if test="loadType != null">
+        LOAD_TYPE,
+      </if>
+      <if test="totalAmount != null">
+        TOTAL_AMOUNT,
+      </if>
+      <if test="saleVoucherType != null">
+        SALE_VOUCHER_TYPE,
+      </if>
+      <if test="productGroup != null">
+        PRODUCT_GROUP,
+      </if>
+      <if test="salesOrg != null">
+        SALES_ORG,
+      </if>
+      <if test="transportType != null">
+        TRANSPORT_TYPE,
+      </if>
+      <if test="factoryCode != null">
+        FACTORY_CODE,
+      </if>
+      <if test="sapTime != null">
+        SAP_TIME,
+      </if>
+      <if test="sapStatus != null">
+        SAP_STATUS,
+      </if>
+      <if test="closeReason != null">
+        CLOSE_REASON,
+      </if>
+      <if test="orderStore != null">
+        ORDER_STORE,
+      </if>
+      <if test="poDetailId != null">
+        PO_DETAIL_ID,
+      </if>
+      <if test="line != null">
+        LINE,
+      </if>
+      <if test="materialCode != null">
+        MATERIAL_CODE,
+      </if>
+      <if test="materielDesc != null">
+        MATERIEL_DESC,
+      </if>
+      <if test="saleTotal != null">
+        SALE_TOTAL,
+      </if>
+      <if test="saleUnit != null">
+        SALE_UNIT,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="itemCode != null">
+        ITEM_CODE,
+      </if>
+      <if test="itemName != null">
+        ITEM_NAME,
+      </if>
+      <if test="amount != null">
+        AMOUNT,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="saleUnitName != null">
+        SALE_UNIT_NAME,
+      </if>
+      <if test="batchNumber != null">
+        batch_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="poId != null">
+        #{poId,jdbcType=VARCHAR},
+      </if>
+      <if test="salesFieldName != null">
+        #{salesFieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="loginname != null">
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="branchCode != null">
+        #{branchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNo != null">
+        #{storeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null">
+        #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierCode != null">
+        #{supplierCode,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null">
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="poNo != null">
+        #{poNo,jdbcType=VARCHAR},
+      </if>
+      <if test="poStartDate != null">
+        #{poStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="poEndDate != null">
+        #{poEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shipTo != null">
+        #{shipTo,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="companyCode != null">
+        #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="voucherCurrency != null">
+        #{voucherCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="soldTo != null">
+        #{soldTo,jdbcType=VARCHAR},
+      </if>
+      <if test="loadType != null">
+        #{loadType,jdbcType=VARCHAR},
+      </if>
+      <if test="totalAmount != null">
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="saleVoucherType != null">
+        #{saleVoucherType,jdbcType=VARCHAR},
+      </if>
+      <if test="productGroup != null">
+        #{productGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="salesOrg != null">
+        #{salesOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="transportType != null">
+        #{transportType,jdbcType=VARCHAR},
+      </if>
+      <if test="factoryCode != null">
+        #{factoryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sapTime != null">
+        #{sapTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sapStatus != null">
+        #{sapStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="closeReason != null">
+        #{closeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStore != null">
+        #{orderStore,jdbcType=VARCHAR},
+      </if>
+      <if test="poDetailId != null">
+        #{poDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="line != null">
+        #{line,jdbcType=VARCHAR},
+      </if>
+      <if test="materialCode != null">
+        #{materialCode,jdbcType=VARCHAR},
+      </if>
+      <if test="materielDesc != null">
+        #{materielDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="saleTotal != null">
+        #{saleTotal,jdbcType=DECIMAL},
+      </if>
+      <if test="saleUnit != null">
+        #{saleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="itemCode != null">
+        #{itemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="itemName != null">
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="saleUnitName != null">
+        #{saleUnitName,jdbcType=VARCHAR},
+      </if>
+      <if test="batchNumber != null">
+        #{batchNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

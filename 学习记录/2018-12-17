@@ -1,0 +1,22 @@
+1.
+自动配置是Spring Boot的最大亮点，完美的展示了CoC约定由于配置。Spring Boot能自动配置Spring各种子项目（Spring MVC, Spring Security, Spring Data, Spring Cloud, Spring Integration, Spring Batch等）以及第三方开源框架所需要定义的各种Bean。
+
+Spring Boot内部定义了各种各样的XxxxAutoConfiguration配置类，预先定义好了各种所需的Bean。只有在特定的情况下这些配置类才会被起效
+
+@SpringBootApplication=@EnabledAutoConfiguration+@CompentScen+@SpringBootConfiguration
+设置该配置无效性时可以
+(全局无效性)(application.yml配置) spring.boot.enableautoconfiguration=false
+(部分无效性)(application.yml配置) spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+@EnabledAutoConfiguration下
+ @AutoConfigurationPack 自动配置包
+ @import 导入自动配置的组件
+
+
+
+
+@AutoConfigureAfter：在指定的配置类初始化后再加载
+@AutoConfigureBefore：在指定的配置类初始化前加载
+@AutoConfigureOrder：数越小越先初始化
+
+
