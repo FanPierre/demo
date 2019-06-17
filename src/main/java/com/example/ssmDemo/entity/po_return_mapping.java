@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.ssmDemo.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

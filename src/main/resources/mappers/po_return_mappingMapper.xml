@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.po_return_mappingMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.entity.po_return_mapping">
+<mapper namespace="com.example.ssmDemo.dao.po_return_mappingMapper">
+  <resultMap id="BaseResultMap" type="com.example.ssmDemo.entity.po_return_mapping">
     <result column="PO_ID" jdbcType="VARCHAR" property="poId" />
     <result column="SALES_FIELD_NAME" jdbcType="VARCHAR" property="salesFieldName" />
     <result column="LOGINNAME" jdbcType="VARCHAR" property="loginname" />
@@ -44,7 +44,7 @@
     <result column="SALE_UNIT_NAME" jdbcType="VARCHAR" property="saleUnitName" />
     <result column="batch_number" jdbcType="VARCHAR" property="batchNumber" />
   </resultMap>
-  <insert id="insert" parameterType="com.example.demo.entity.po_return_mapping">
+  <insert id="insert" parameterType="com.example.ssmDemo.entity.po_return_mapping">
     insert into po_return_mapping (PO_ID, SALES_FIELD_NAME, LOGINNAME, 
       BRANCH_CODE, BRANCH_NAME, STORE_NO, 
       STORE_NAME, SUPPLIER_CODE, SUPPLIER_NAME, 
@@ -74,7 +74,7 @@
       #{itemName,jdbcType=VARCHAR}, #{amount,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, 
       #{saleUnitName,jdbcType=VARCHAR}, #{batchNumber,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.entity.po_return_mapping">
+  <insert id="insertSelective" parameterType="com.example.ssmDemo.entity.po_return_mapping">
     insert into po_return_mapping
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="poId != null">

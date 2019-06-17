@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.example.ssmDemo.dao;
 
-import com.example.demo.entity.po_return_mapping;
+import com.example.ssmDemo.entity.po_return_mapping;
 
 public interface po_return_mappingMapper {
     int insert(po_return_mapping record);
